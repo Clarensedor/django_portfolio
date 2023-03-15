@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+
+{% block content%}
+<h1>posts</h1>
+
+{% for post in posts %}
+<div class="p-3">
+    <div class="card card-body bg-black" >
+        <div class="row">
+            <div class="col-3">
+                <img src="{{post.image.url}}" alt="{{project.title}}" class="img-fluid" />
+
+            </div>
+            <div class="col-9">
+
+                <h2>{{post.title}}</h2>
+                <p>{{post.description}}</p>
+                <!-- pongo el formato de fecha y que este en mayusculas una locura el django -->
+                <p>{{post.date|date:'M d Y'|upper }}</p>
+                <!-- le paso el post detail que es como entrar al al projecto y le paso por parametro el id de los post -->
+                <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-primary">{{post.title}}</a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endfor %}
+{% endblock %}

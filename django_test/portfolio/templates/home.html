@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+<header class="row bg-black">
+    <div class="col-md-4 p-2 my-auto">
+        <img src="{% static 'images/perfil.jpeg' %}" width="200" class="my-4 alt="">
+    </div>
+    <div class=" col-md-8 my-auto">
+        <h1>I am <strong>Anthony</strong></h1>
+        <h3>I am Junior Developer</h3>
+        <p> Well i got my bachelors degree in informatic science in Anima is a the first institute with the model
+            predual
+            working-studing i currenly work as a software developer at the institut of thencnical standards,
+            i create intern software for company.
+            before thath i was with onetree as a technical support
+            now im howping to move into a semi senior software developer i love the part of backend development and i
+            have the motivation to worck for reach that senioriti.
+            in my personal life i play league of legends stay with my gilfriend and go to de cinema and parck i have two
+            poodles dolly and paco paco is black and dolly is withe.
+            dolly is a dog very lazy she stay in the bed with my all the nigth and when y organice for the job she
+            leaves and go to the couch</p>
+        <a href="{% static '/docs/Anthony.Pereira.pdf' %}" class="btn btn-primary btn-sm rounded-0 my-3">Download
+            CV</a>
+    </div>
+</header>
+
+
+<div class="row my-4 text-center">
+    <h3>My Projects</h3>
+    {% for project in projects %}
+    <div class="col-md-4">
+        <div class="card bg-black card-projects">
+            <div class="card-body p-xl-3 " >
+                <h2>{{project.title}}</h2>
+
+                <p>{{project.description}}</p>
+                
+                <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top" width="200" height="250"/>
+
+                <br>
+
+                {% if project.url %}
+                <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm mt-2" target="_blank">{{project.url}}</a>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock %}
+</div>

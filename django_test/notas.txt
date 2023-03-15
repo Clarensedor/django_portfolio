@@ -1,0 +1,17 @@
+1 crear entorno virtual de python
+2 instalar django
+3 django-admin startproject django-portfolio  inicio un projecto
+4 python .\manage.py startapp portfolio //inicio la aplicacion
+5 agrego la aplicacion al settings.py
+6 miro las urls.py para ver que urls van a ser visitadas
+7 el modelo pa ver que hacer campos bd, funciones etc
+8 hacer las migrationsç python .\manage.py makemigrations 
+9 ejecutar las migraciones  python .\manage.py migrate
+10 para crear el super usuario python .\manage.py createsuperuser
+11 En admin.py puedo agregar los modelos para verlo en el administrador de django con  los  -- campos creados anteriormente
+12 para setear bien el lugar donde se van a guardar las imagenes tengo que ir  settings.py
+y poner una opcion mas que sea por ejemplo MEDIA_ROOT = BASE_DIR / 'media' lo que hace es guardar las imagenes en la carpeta raiz de django en la carpeta media
+13 creamos la carpeta templates para poner lo que sea de la vista ahi adentro html css etc 
+14 luego tenemos que crear la vista que seria como el controlador y ahi ponemos una funcion que renderiza el archivo home .html
+15 en views puedo traer el modelo de dato que cree en models.py 
+16 en el gitignore agregar media pycache venv dbsqlite3
