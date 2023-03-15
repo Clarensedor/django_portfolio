@@ -1,4 +1,4 @@
-dj-database-url 1.2.0
+dj-database-url==1.2.0
 asgiref==3.5.2
 black==22.10.0
 click==8.1.3
