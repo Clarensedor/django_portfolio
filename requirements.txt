@@ -10,3 +10,4 @@ pathspec==0.10.2
 platformdirs==2.5.4
 sqlparse==0.4.3
 tzdata==2022.6
+psycopg2==2.9.5
