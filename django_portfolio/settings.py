@@ -24,7 +24,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-_z9%&hs+13q)6
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-os.environ.get('SECRET_KEY', default='pepe')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
@@ -130,6 +129,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = 'portfolio\static'
 
 # Following settings only make sense on production and may break development environments.
 if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
