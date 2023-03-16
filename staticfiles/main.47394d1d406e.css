@@ -1,0 +1,31 @@
+body{
+    background: #090909
+}
+
+.bg-black{
+    background: #000;
+}
+
+
+
+.btn{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.card-projects {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.card-projects:hover,
+.card-projects:focus,
+.card-projects:active {
+    transform: scale(1.1);
+}
