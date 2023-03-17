@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('SECRET_KEY', default='*')
- 
-
+os.environ.get('SECRET_KEY', default='pepe')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
+
+SECRET_KEY = 'django-insecure-_z9%&hs+13q)6khp3&p+e!shfn#ypvi%!4%5ai*rm0b-jquvd='
 
 ALLOWED_HOSTS = []
 
@@ -86,15 +86,12 @@ WSGI_APPLICATION = 'django_portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-         default='postgresql://postgres:postgres@localhost/postgres',
-         conn_max_age=600
-    )
-    
-
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
 
 
 # Password validation
@@ -133,13 +130,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Following settings only make sense on production and may break development environments.
-if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
-    # in your application directory on Render.
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    # Turn on WhiteNoise storage backend that takes care of compressing static files
-    # and creating unique names for each version so they can safely be cached forever.
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
