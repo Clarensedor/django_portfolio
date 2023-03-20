@@ -25,14 +25,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('blog/', include('blog.urls')),
+        path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
+    path('docs/<str:filename>', serve, {'document_root': settings.STATIC_ROOT}),
 ]
 
 
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-urlpatterns += [
-    # ...
-    path('media/<path>', serve, {'document_root': settings.MEDIA_ROOT}),
-]
